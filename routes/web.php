@@ -7,6 +7,8 @@ use App\Http\Controllers\SliderController;
 use App\Models\Slider;
 use App\Http\Controllers\AboutController;
 use App\Models\About;
+use App\Http\Controllers\PortfolioController;
+use App\Models\Portfolio;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,3 +67,13 @@ Route::post('/slider/add',[SliderController::class,'AddSlider'])->name('store.sl
 Route::post('/about/add',[AboutController::class,'AddAbout'])->name('store.about');
  Route::get('about/edit/{id}',[AboutController::class,'Edit']);
   Route::post('/about/update/{id}',[AboutController::class,'Update']);
+
+
+  // portfolio route
+
+Route::get('/portfolio',[PortfolioController::class,'Portfolio'])->name('portfolio');
+
+Route::get('/portfolio/all',[PortfolioController::class,'AllPortfolio'])->name('all.portfolio');
+Route::post('/Portfolio/add',[PortfolioController::class,'AddPortfolio'])->name('store.portfolio');
+ Route::get('Portfolio/edit/{id}',[PortfolioController::class,'Edit']);
+  Route::post('/Portfolio/update/{id}',[PortfolioController::class,'Update']);
