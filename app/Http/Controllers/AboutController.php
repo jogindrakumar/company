@@ -12,6 +12,11 @@ class AboutController extends Controller
     //
      // all slider function 
 
+     public function About(){
+        $abouts = About::all();
+        return view('pages.about',compact('abouts')); 
+     }
+
     public function AllAbout(){
         $abouts = About::all();
         return view('admin.about.index',compact('abouts'));

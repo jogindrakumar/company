@@ -64,6 +64,7 @@ Route::post('/slider/add',[SliderController::class,'AddSlider'])->name('store.sl
   // all about route
 
   Route::get('/about/all',[AboutController::class,'AllAbout'])->name('all.about');
+  Route::get('/about',[AboutController::class,'About'])->name('about');
 Route::post('/about/add',[AboutController::class,'AddAbout'])->name('store.about');
  Route::get('about/edit/{id}',[AboutController::class,'Edit']);
   Route::post('/about/update/{id}',[AboutController::class,'Update']);
@@ -77,3 +78,7 @@ Route::get('/portfolio/all',[PortfolioController::class,'AllPortfolio'])->name('
 Route::post('/portfolio/add',[PortfolioController::class,'AddPortfolio'])->name('store.portfolio');
  Route::get('/portfolio/edit/{id}',[PortfolioController::class,'Edit']);
   Route::post('/portfolio/update/{id}',[PortfolioController::class,'Update']);
+
+ 
+
+
