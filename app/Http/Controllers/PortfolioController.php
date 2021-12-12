@@ -10,7 +10,8 @@ class PortfolioController extends Controller
 {
     //show portfolio
     public function Portfolio(){
-        return view('pages.portfolio');
+        $portfolios = Portfolio::all();
+        return view('pages.portfolio',compact('portfolios'));
     }
 
      public function AllPortfolio(){

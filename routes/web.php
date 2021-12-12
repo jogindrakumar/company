@@ -74,6 +74,6 @@ Route::post('/about/add',[AboutController::class,'AddAbout'])->name('store.about
 Route::get('/portfolio',[PortfolioController::class,'Portfolio'])->name('portfolio');
 
 Route::get('/portfolio/all',[PortfolioController::class,'AllPortfolio'])->name('all.portfolio');
-Route::post('/Portfolio/add',[PortfolioController::class,'AddPortfolio'])->name('store.portfolio');
- Route::get('Portfolio/edit/{id}',[PortfolioController::class,'Edit']);
-  Route::post('/Portfolio/update/{id}',[PortfolioController::class,'Update']);
+Route::post('/portfolio/add',[PortfolioController::class,'AddPortfolio'])->name('store.portfolio');
+ Route::get('/portfolio/edit/{id}',[PortfolioController::class,'Edit']);
+  Route::post('/portfolio/update/{id}',[PortfolioController::class,'Update']);
