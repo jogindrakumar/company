@@ -52,8 +52,16 @@ class ServiceController extends Controller
     public function Update(Request $request , $id){
         $validated = $request->validate([
         'service_name' => 'required|min:4',
+        'service_text' => 'required',
         
     ]);
+    Service::find($id)->update([
+        'service_name' =>$request->service_name,
+        'service_text' => $request->service_text,
+        'created_at' => Carbon::now()
+    ]);
+
+    return Redirect()->route('all.service')->with('success','service updated successfully');
    
    
 

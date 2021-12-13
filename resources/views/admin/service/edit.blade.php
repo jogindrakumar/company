@@ -15,31 +15,27 @@
                     <div class="row">
                         <div class="col-sm-6">
 
-                            {{-- all brand show list here --}}
+                            {{-- all service show list here --}}
                            
                         </div>
                         <div class="col-sm-6">
 
-                            {{-- Add brand from here --}}
-<form action="{{url('brand/update/'.$brands->id)}}" method="POST" enctype="multipart/form-data">
+                            {{-- Add service from here --}}
+<form action="{{url('service/update/'.$services->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Brand Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" name="brand_name" value="{{$brands->brand_name}}" aria-describedby="emailHelp">
-    @error('brand_name')
+    <label for="exampleInputEmail1" class="form-label">service Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="service_name" value="{{$services->service_name}}" aria-describedby="emailHelp">
+    @error('service_name')
 <span class="text-danger">{{$message}}</span>        
     @enderror
   </div>
+ 
+  
   <div class="mb-3">
-      <input type="hidden" class="form-control" name="old_image" value="{{$brands->brand_image}}" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3">
-      <img src="{{asset($brands->brand_image)}}" alt="" style="width: 200px;height:200px;">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Brand image </label>
-    <input type="file" class="form-control" name="brand_image" value="{{$brands->brand_image}}" id="exampleInputPassword1">
-    @error('brand_image')
+    <label for="exampleInputPassword1" class="form-label">service text </label>
+    <input type="text" class="form-control" name="service_text" value="{{$services->service_text}}" id="exampleInputPassword1">
+    @error('service_text')
 <span class="text-danger">{{$message}}</span>        
     @enderror
   </div>
