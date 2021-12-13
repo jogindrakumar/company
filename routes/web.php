@@ -9,6 +9,8 @@ use App\Http\Controllers\AboutController;
 use App\Models\About;
 use App\Http\Controllers\PortfolioController;
 use App\Models\Portfolio;
+use App\Http\Controllers\ServiceController;
+use App\Models\Service;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +80,17 @@ Route::get('/portfolio/all',[PortfolioController::class,'AllPortfolio'])->name('
 Route::post('/portfolio/add',[PortfolioController::class,'AddPortfolio'])->name('store.portfolio');
  Route::get('/portfolio/edit/{id}',[PortfolioController::class,'Edit']);
   Route::post('/portfolio/update/{id}',[PortfolioController::class,'Update']);
+
+
+  // services route
+
+
+Route::get('/services',[ServiceController::class,'Service'])->name('service');
+
+Route::get('/service/all',[ServiceController::class,'AllService'])->name('all.service');
+Route::post('/service/add',[ServiceController::class,'AddService'])->name('store.service');
+ Route::get('/service/edit/{id}',[ServiceController::class,'Edit']);
+  Route::post('/service/update/{id}',[ServiceController::class,'Update']);
 
  
 

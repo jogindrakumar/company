@@ -109,7 +109,7 @@
             </a>
         </li>
          <li class="active">
-            <a class="sidenav-item-link" href="index.html">
+            <a class="sidenav-item-link" href="{{route('all.service')}}">
                 <span class="nav-text">Home Services</span>
 
             </a>

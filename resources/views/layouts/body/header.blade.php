@@ -26,7 +26,7 @@
             </ul>
           </li>
 
-          <li><a href="services.html">Services</a></li>
+          <li><a href="{{route('service')}}">Services</a></li>
           <li><a href="{{route('portfolio')}}">Portfolio</a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="blog.html">Blog</a></li>
