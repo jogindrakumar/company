@@ -11,6 +11,8 @@ use App\Http\Controllers\PortfolioController;
 use App\Models\Portfolio;
 use App\Http\Controllers\ServiceController;
 use App\Models\Service;
+use App\Http\Controllers\ContactController;
+use App\Models\Contact;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,6 +95,15 @@ Route::get('/service/edit/{id}',[ServiceController::class,'Edit']);
 Route::post('/service/update/{id}',[ServiceController::class,'Update']);
 Route::get('/service/delete/{id}',[ServiceController::class,'Delete']);
 
- 
 
+//contact route
+
+ 
+Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
+
+Route::get('/contact/all',[ContactController::class,'AllContact'])->name('all.contact');
+Route::post('/contact/add',[ContactController::class,'AddContact'])->name('store.contact');
+Route::get('/contact/edit/{id}',[ContactController::class,'Edit']);
+Route::post('/contact/update/{id}',[ContactController::class,'Update']);
+Route::get('/contact/delete/{id}',[ContactController::class,'Delete']);
 
