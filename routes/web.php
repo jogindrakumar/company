@@ -89,8 +89,9 @@ Route::get('/services',[ServiceController::class,'Service'])->name('service');
 
 Route::get('/service/all',[ServiceController::class,'AllService'])->name('all.service');
 Route::post('/service/add',[ServiceController::class,'AddService'])->name('store.service');
- Route::get('/service/edit/{id}',[ServiceController::class,'Edit']);
-  Route::post('/service/update/{id}',[ServiceController::class,'Update']);
+Route::get('/service/edit/{id}',[ServiceController::class,'Edit']);
+Route::post('/service/update/{id}',[ServiceController::class,'Update']);
+Route::get('/service/delete/{id}',[ServiceController::class,'Delete']);
 
  
 

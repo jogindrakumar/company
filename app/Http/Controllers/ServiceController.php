@@ -66,4 +66,9 @@ class ServiceController extends Controller
    
 
     }
+    public function Delete($id){
+         Service::find($id)->delete();
+         return Redirect()->back()->with('success','service deleted successfully!');
+
+    }
 }
