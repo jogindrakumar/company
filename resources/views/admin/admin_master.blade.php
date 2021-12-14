@@ -132,6 +132,12 @@
 
             </a>
         </li>
+         <li class="active">
+            <a class="sidenav-item-link" href="{{route('all.message')}}">
+                <span class="nav-text">Messages</span>
+
+            </a>
+        </li>
 
 
 

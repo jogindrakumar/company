@@ -13,6 +13,8 @@ use App\Http\Controllers\ServiceController;
 use App\Models\Service;
 use App\Http\Controllers\ContactController;
 use App\Models\Contact;
+use App\Http\Controllers\ContactFormController;
+use App\Models\ContactForm;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,4 +108,10 @@ Route::post('/contact/add',[ContactController::class,'AddContact'])->name('store
 Route::get('/contact/edit/{id}',[ContactController::class,'Edit']);
 Route::post('/contact/update/{id}',[ContactController::class,'Update']);
 Route::get('/contact/delete/{id}',[ContactController::class,'Delete']);
+
+// message route
+
+Route::get('/message',[ContactFormController::class,'AllMessage'])->name('all.message');
+
+Route::post('/message/sent',[ContactFormController::class,'AddMessage'])->name('store.message');
 
