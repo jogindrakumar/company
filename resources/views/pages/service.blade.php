@@ -31,7 +31,7 @@
                 </svg>
                 <i class="bx bxl-dribbble"></i>
               </div>
-              <h4><a href="">Lorem Ipsum</a></h4>
+              <h4><a href="">{{$services->service_name}}</a></h4>
               <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
             </div>
           </div>
@@ -44,7 +44,7 @@
                 </svg>
                 <i class="bx bx-file"></i>
               </div>
-              <h4><a href="">Sed Perspiciatis</a></h4>
+              <h4><a href="">{{$second_service->service_name}}</a></h4>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
             </div>
           </div>

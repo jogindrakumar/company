@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ServiceController extends Controller
 {
     //show home page services
 
     public function Service(){
-        return view('pages.service');
+        $services = DB::table('services')->where('service_name','Web Development')->first();
+        $second_service = DB::table('services')->where('service_name','SEO Expert')->first();
+        return view('pages.service',compact('services','second_service'));
     }
 
       // all service function 

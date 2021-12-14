@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     //
     public function Contact(){
-        $contacts = Contact::all();
+        $contacts = Contact::first();
         return view('pages.contact',compact('contacts'));
     }
 

@@ -32,28 +32,28 @@
 
             <div class="info-wrap">
               <div class="row">
-
-                @foreach ($contacts as $contact )
+{{-- 
+                @foreach ($contacts as $contact ) --}}
                   
                 
                 <div class="col-lg-4 info">
                   <i class="icofont-google-map"></i>
                   <h4>Location:</h4>
-                  <p>{{$contact->location}}</p>
+                  <p>{{$contacts->location}}</p>
                 </div>
 
                 <div class="col-lg-4 info mt-4 mt-lg-0">
                   <i class="icofont-envelope"></i>
                   <h4>Email:</h4>
-                  <p>{{$contact->email}}</p>
+                  <p>{{$contacts->email}}</p>
                 </div>
 
                 <div class="col-lg-4 info mt-4 mt-lg-0">
                   <i class="icofont-phone"></i>
                   <h4>Call:</h4>
-                  <p>{{$contact->call}}</p>
+                  <p>{{$contacts->call}}</p>
                 </div>
-                @endforeach
+                {{-- @endforeach --}}
               </div>
             </div>
 
