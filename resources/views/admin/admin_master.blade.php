@@ -126,6 +126,12 @@
 
             </a>
         </li>
+        <li class="active">
+            <a class="sidenav-item-link" href="{{route('all.contact')}}">
+                <span class="nav-text">Contact</span>
+
+            </a>
+        </li>
 
 
 

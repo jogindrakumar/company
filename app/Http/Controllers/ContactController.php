@@ -10,7 +10,8 @@ class ContactController extends Controller
 {
     //
     public function Contact(){
-        return view('pages.contact');
+        $contacts = Contact::all();
+        return view('pages.contact',compact('contacts'));
     }
 
       // all contact function 
@@ -24,14 +25,16 @@ class ContactController extends Controller
 
     public function AddContact(Request $request){
         $validated = $request->validate([
-        'contact_name' => 'required|unique:contacts|min:4',
-        'contact_text' => 'required',
+        'location' => 'required|unique:contacts',
+        'email' => 'required',
+        'call' => 'required',
     ]);
 
 
     Contact::insert([
-        'contact_name' =>$request->contact_name,
-        'contact_text' => $request->contact_text,
+        'location' =>$request->location,
+        'email' => $request->email,
+        'call' => $request->call,
         'created_at' => Carbon::now()
     ]);
 
@@ -49,15 +52,16 @@ class ContactController extends Controller
     // update contact function
 
     public function Update(Request $request , $id){
-        $validated = $request->validate([
-        'contact_name' => 'required|min:4',
-        'contact_text' => 'required',
-        
+     $validated = $request->validate([
+        'location' => 'required',
+        'email' => 'required',
+        'call' => 'required',
     ]);
     Contact::find($id)->update([
-        'contact_name' =>$request->contact_name,
-        'contact_text' => $request->contact_text,
-        'created_at' => Carbon::now()
+            'location' =>$request->location,
+            'email' => $request->email,
+            'call' => $request->call,
+            'updated_at' => Carbon::now()
     ]);
 
     return Redirect()->route('all.contact')->with('success','contact updated successfully');

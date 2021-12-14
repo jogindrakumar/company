@@ -32,23 +32,28 @@
 
             <div class="info-wrap">
               <div class="row">
+
+                @foreach ($contacts as $contact )
+                  
+                
                 <div class="col-lg-4 info">
                   <i class="icofont-google-map"></i>
                   <h4>Location:</h4>
-                  <p>A108 Adam Street<br>New York, NY 535022</p>
+                  <p>{{$contact->location}}</p>
                 </div>
 
                 <div class="col-lg-4 info mt-4 mt-lg-0">
                   <i class="icofont-envelope"></i>
                   <h4>Email:</h4>
-                  <p>info@example.com<br>contact@example.com</p>
+                  <p>{{$contact->email}}</p>
                 </div>
 
                 <div class="col-lg-4 info mt-4 mt-lg-0">
                   <i class="icofont-phone"></i>
                   <h4>Call:</h4>
-                  <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
+                  <p>{{$contact->call}}</p>
                 </div>
+                @endforeach
               </div>
             </div>
 
