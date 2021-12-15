@@ -80,7 +80,8 @@ class ContactController extends Controller
     //all message list
 
     public function AllMessage(){
-        return view('admin.message.index');
+        $messages = ContactForm::all();
+        return view('admin.message.index',compact('messages'));
     }
 
     public function AddMessage(Request $request){
@@ -101,6 +102,13 @@ class ContactController extends Controller
     ]);
 
     return Redirect()->route('contact')->with('success','Message Send successfully | ThankYou :)');
+
+    }
+
+    // delete message
+    public function DeleteMessage($id){
+        ContactForm::find($id)->delete();
+        return Redirect()->back()->with('success','Message delete successfully');
 
     }
 }

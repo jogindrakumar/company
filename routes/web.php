@@ -114,4 +114,7 @@ Route::get('/contact/delete/{id}',[ContactController::class,'Delete']);
 Route::get('/message',[ContactController::class,'AllMessage'])->name('all.message');
 
 Route::post('/message/sent',[ContactController::class,'AddMessage'])->name('store.message');
+Route::get('/message/delete/{id}',[ContactController::class,'DeleteMessage']);
+
+
 
