@@ -13,7 +13,7 @@ use App\Http\Controllers\ServiceController;
 use App\Models\Service;
 use App\Http\Controllers\ContactController;
 use App\Models\Contact;
-use App\Http\Controllers\ContactFormController;
+
 use App\Models\ContactForm;
 
 /*
@@ -111,7 +111,7 @@ Route::get('/contact/delete/{id}',[ContactController::class,'Delete']);
 
 // message route
 
-Route::get('/message',[ContactFormController::class,'AllMessage'])->name('all.message');
+Route::get('/message',[ContactController::class,'AllMessage'])->name('all.message');
 
-Route::post('/message/sent',[ContactFormController::class,'AddMessage'])->name('store.message');
+Route::post('/message/sent',[ContactController::class,'AddMessage'])->name('store.message');
 

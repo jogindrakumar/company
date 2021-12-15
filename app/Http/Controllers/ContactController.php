@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\ContactForm;
 use Illuminate\Support\Carbon;
 
 class ContactController extends Controller
@@ -72,6 +73,34 @@ class ContactController extends Controller
     public function Delete($id){
          Contact::find($id)->delete();
          return Redirect()->back()->with('success','contact deleted successfully!');
+
+    }
+
+
+    //all message list
+
+    public function AllMessage(){
+        return view('admin.message.index');
+    }
+
+    public function AddMessage(Request $request){
+        $validated = $request->validate([
+        'name' => 'required',
+        'email' => 'required',
+        'subject' => 'required',
+        'message' => 'required',
+    ]);
+
+
+    ContactForm::insert([
+        'name' =>$request->name,
+        'email' => $request->email,
+        'subject' => $request->subject,
+        'message' => $request->message,
+        'created_at' => Carbon::now()
+    ]);
+
+    return Redirect()->route('contact')->with('success','Message Send successfully | ThankYou :)');
 
     }
 }
