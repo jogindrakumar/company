@@ -12,7 +12,9 @@ use App\Models\Portfolio;
 use App\Http\Controllers\ServiceController;
 use App\Models\Service;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ChangePass;
 use App\Models\Contact;
+
 
 use App\Models\ContactForm;
 
@@ -115,6 +117,11 @@ Route::get('/message',[ContactController::class,'AllMessage'])->name('all.messag
 
 Route::post('/message/sent',[ContactController::class,'AddMessage'])->name('store.message');
 Route::get('/message/delete/{id}',[ContactController::class,'DeleteMessage']);
+
+// change pass route
+
+Route::get('/change/password',[ChangePass::class,'CPass'])->name('change.password');
+Route::post('/password/update',[ChangePass::class,'UpdatePassword'])->name('password.update');
 
 
 
