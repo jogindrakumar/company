@@ -60,6 +60,11 @@
                 </a>
               </div>
             </div>
+             @if(session('success'))
+        <div class="alert alert-success text-center" role="alert">
+  {{session('success')}}
+</div>
+@endif
             <div class="card-body p-5">
 
               <h4 class="text-dark mb-5">Sign In</h4>

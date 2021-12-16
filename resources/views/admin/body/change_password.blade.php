@@ -17,7 +17,7 @@
         <div class="form-group">
             <label for="exampleFormControlInput3">Current Password</label>
             <input type="password" class="form-control" name="oldpassword" id="current_password" placeholder="current password">
-            @error('old_password')
+            @error('oldpassword')
                 <span class="text-danger">{{$message}}</span>
             @enderror
         </div>
