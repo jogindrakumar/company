@@ -123,5 +123,11 @@ Route::get('/message/delete/{id}',[ContactController::class,'DeleteMessage']);
 Route::get('/change/password',[ChangePass::class,'CPass'])->name('change.password');
 Route::post('/password/update',[ChangePass::class,'UpdatePassword'])->name('password.update');
 
+//change user details
+Route::get('/user/profile',[ChangePass::class,'ProfileUpdate'])->name('user.profile');
+
+Route::post('/user/profile/update',[ChangePass::class,'UserProfileUpdate'])->name('user.profile.update');
+
+
 
 
