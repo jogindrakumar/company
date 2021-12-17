@@ -45,8 +45,12 @@ class BrandController extends Controller
         'brand_image' => $last_img,
         'created_at' => Carbon::now()
     ]);
+    $notification = array(
+        'message' => 'brand inserted successfully',
+        'alert-type' => 'success'
+    );
 
-    return Redirect()->back()->with('success','brand inserted successfully');
+    return Redirect()->back()->with($notification);
 
     }
 
@@ -81,8 +85,12 @@ class BrandController extends Controller
         'brand_image' => $last_img,
         'updated_at' => Carbon::now()
     ]);
+     $notification = array(
+        'message' => 'brand image updated successfully',
+        'alert-type' => 'warning',
+    );
 
-    return Redirect()->route('all.brand')->with('success','brand image updated  successfully');
+    return Redirect()->route('all.brand')->with($notification);
 
     }else{
 Brand::find($id)->update([
@@ -90,8 +98,12 @@ Brand::find($id)->update([
         
         'updated_at' => Carbon::now()
     ]);
+    $notification = array(
+        'message' => 'brand name updated successfully',
+        'alert-type' => 'warning',
+    );
 
-    return Redirect()->route('all.brand')->with('success','brand name updated successfully');
+    return Redirect()->route('all.brand')->with($notification);
     }
 
     }
