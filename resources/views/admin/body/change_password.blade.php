@@ -1,11 +1,11 @@
 @extends('admin.admin_master')
 @section('admin_content')
 
-    @if(session('success'))
+    {{-- @if(session('success'))
         <div class="alert alert-success text-center" role="alert">
   {{session('success')}}
 </div>
-@endif
+@endif --}}
 <div class="card card-default">
 <div class="card-header card-header-border-bottom">
     <h2>Change Password</h2>

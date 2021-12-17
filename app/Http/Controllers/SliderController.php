@@ -39,8 +39,11 @@ class SliderController extends Controller
         'slider_image' => $last_img,
         'created_at' => Carbon::now()
     ]);
-
-    return Redirect()->back()->with('success','slider inserted successfully');
+ $notification = array(
+                        'message' => 'slider inserted successfully',
+                        'alert-type' => 'success'
+                    );
+    return Redirect()->back()->with($notification);
 
     }
 

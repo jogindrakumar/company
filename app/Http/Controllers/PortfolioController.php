@@ -40,8 +40,12 @@ class PortfolioController extends Controller
         'portfolio_image' => $last_img,
         'created_at' => Carbon::now()
     ]);
+    $notification = array(
+                        'message' => 'portfolio inserted successfully',
+                        'alert-type' => 'success'
+                    );
 
-    return Redirect()->back()->with('success','portfolio inserted successfully');
+    return Redirect()->back()->with($notification);
 
     }
 
@@ -64,7 +68,7 @@ class PortfolioController extends Controller
     if($portfolio_image){
 
 
-        $name_gen = hexdec(uniqid());
+    $name_gen = hexdec(uniqid());
     $img_ext = strtolower($portfolio_image->getClientOriginalExtension());
     $upload_location = 'image/portfolio/';
     $image_name = $name_gen.'.'.$img_ext;
@@ -76,8 +80,11 @@ class PortfolioController extends Controller
         'portfolio_image' => $last_img,
         'updated_at' => Carbon::now()
     ]);
-
-    return Redirect()->route('all.portfolio')->with('success','portfolio image updated  successfully');
+ $notification = array(
+                        'message' => 'portfolio image updated  successfully',
+                        'alert-type' => 'success'
+                    );
+    return Redirect()->route('all.portfolio')->with($notification);
 
     }else{
 Portfolio::find($id)->update([
@@ -85,8 +92,11 @@ Portfolio::find($id)->update([
         
         'updated_at' => Carbon::now()
     ]);
-
-    return Redirect()->route('all.portfolio')->with('success','portfolio name updated successfully');
+$notification = array(
+                        'message' => 'portfolio name updated successfully',
+                        'alert-type' => 'success'
+                    );
+    return Redirect()->route('all.portfolio')->with($notification);
     }
 
     }

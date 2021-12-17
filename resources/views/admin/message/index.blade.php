@@ -2,11 +2,11 @@
 @extends('admin.admin_master')
 @section('admin_content')
 
-    @if(session('success'))
+    {{-- @if(session('success'))
         <div class="alert alert-success text-center" role="alert">
   {{session('success')}}
 </div>
-@endif
+@endif --}}
 <table class="table">
   <thead>
     <tr>

@@ -2,11 +2,11 @@
 @section('admin_content')
 
     <div class="py-12">
-        @if(session('success'))
+        {{-- @if(session('success'))
         <div class="alert alert-success text-center" role="alert">
   {{session('success')}}
 </div>
-@endif
+@endif --}}
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 {{-- <x-jet-welcome /> --}}
