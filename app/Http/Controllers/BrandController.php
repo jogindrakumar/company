@@ -9,6 +9,10 @@ use Illuminate\Support\Carbon;
 
 class BrandController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     //logout route
 
     public function Logout(){

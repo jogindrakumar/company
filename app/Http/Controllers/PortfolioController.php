@@ -8,6 +8,10 @@ use Illuminate\Support\Carbon;
 
 class PortfolioController extends Controller
 {
+  
+  public function __construct(){
+        $this->middleware('auth');
+    }
     //show portfolio
     public function Portfolio(){
         $portfolios = Portfolio::all();

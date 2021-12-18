@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Hash;
 
 class ChangePass extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     //change password
 
     public function CPass(){

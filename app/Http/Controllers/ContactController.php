@@ -10,6 +10,10 @@ use Illuminate\Support\Carbon;
 class ContactController extends Controller
 {
     //
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function Contact(){
         $contacts = Contact::first();
         return view('pages.contact',compact('contacts'));

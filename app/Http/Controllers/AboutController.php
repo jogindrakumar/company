@@ -10,6 +10,10 @@ use App\Models\About;
 class AboutController extends Controller
 {
     //
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
      // all slider function 
 
      public function About(){
