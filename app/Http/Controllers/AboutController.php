@@ -52,8 +52,12 @@ class AboutController extends Controller
         'text_two' =>$request->text_two,
         'created_at' => Carbon::now()
     ]);
+    $notification = array(
+        'message' => 'about inserted successfully',
+        'alert-type' => 'success'
+    );
 
-    return Redirect()->back()->with('success','about inserted successfully');
+    return Redirect()->back()->with($notification);
 
     }
 
@@ -78,8 +82,12 @@ class AboutController extends Controller
         'text_two' =>$request->text_two,
         'updated_at' => Carbon::now()
     ]);
+    $notification = array(
+        'message' => 'about updated successfully',
+        'alert-type' => 'warning'
+    );
 
-    return Redirect()->route('all.about')->with('success','about updated successfully');
+    return Redirect()->route('all.about')->with($notification);
     
 
 

@@ -42,8 +42,11 @@ class ServiceController extends Controller
         'service_text' => $request->service_text,
         'created_at' => Carbon::now()
     ]);
-
-    return Redirect()->back()->with('success','service inserted successfully');
+$notification = array(
+                        'message' => 'service inserted successfully',
+                        'alert-type' => 'success'
+                    );
+    return Redirect()->back()->with($notification);
 
     }
 
@@ -67,15 +70,22 @@ class ServiceController extends Controller
         'service_text' => $request->service_text,
         'created_at' => Carbon::now()
     ]);
-
-    return Redirect()->route('all.service')->with('success','service updated successfully');
+$notification = array(
+                        'message' => 'service updated successfully',
+                        'alert-type' => 'success'
+                    );
+    return Redirect()->route('all.service')->with($notification);
    
    
 
     }
     public function Delete($id){
+        $notification = array(
+                        'message' => 'service deleted successfully!',
+                        'alert-type' => 'success'
+                    );
          Service::find($id)->delete();
-         return Redirect()->back()->with('success','service deleted successfully!');
+         return Redirect()->back()->with($notification);
 
     }
 }

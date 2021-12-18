@@ -42,8 +42,12 @@ class ContactController extends Controller
         'call' => $request->call,
         'created_at' => Carbon::now()
     ]);
+    $notification = array(
+                        'message' => 'contact inserted successfully',
+                        'alert-type' => 'success'
+                    );
 
-    return Redirect()->back()->with('success','contact inserted successfully');
+    return Redirect()->back()->with($notification);
 
     }
 
@@ -68,15 +72,23 @@ class ContactController extends Controller
             'call' => $request->call,
             'updated_at' => Carbon::now()
     ]);
+    $notification = array(
+                        'message' => 'contact updated successfully',
+                        'alert-type' => 'warning'
+                    );
 
-    return Redirect()->route('all.contact')->with('success','contact updated successfully');
+    return Redirect()->route('all.contact')->with($notification);
    
    
 
     }
     public function Delete($id){
+        $notification = array(
+                        'message' => 'contact deleted successfully!',
+                        'alert-type' => 'error'
+                    );
          Contact::find($id)->delete();
-         return Redirect()->back()->with('success','contact deleted successfully!');
+         return Redirect()->back()->with($notification);
 
     }
 
@@ -104,15 +116,23 @@ class ContactController extends Controller
         'message' => $request->message,
         'created_at' => Carbon::now()
     ]);
+    $notification = array(
+                        'message' => 'Message Send successfully | ThankYou :)',
+                        'alert-type' => 'success'
+                    );
 
-    return Redirect()->route('contact')->with('success','Message Send successfully | ThankYou :)');
+    return Redirect()->route('contact')->with($notification);
 
     }
 
     // delete message
     public function DeleteMessage($id){
         ContactForm::find($id)->delete();
-        return Redirect()->back()->with('success','Message delete successfully');
+        $notification = array(
+                        'message' => 'Message delete successfully',
+                        'alert-type' => 'error'
+                    );
+        return Redirect()->back()->with($notification);
 
     }
 }
